@@ -1,3 +1,5 @@
+const zoom = document.querySelector(".slide");
+let isZoomed = false;
 const prevBtn = document.querySelector('#left_btn');
 const nextBtn = document.querySelector('#right_btn');
 const slides = document.querySelectorAll('.slide img');
@@ -31,3 +33,13 @@ nextBtn.addEventListener('click', () => {
 })
 
 updateSlide(); // Show the first image
+
+zoom.addEventListener("dblclick", () => {
+    if (isZoomed) {
+        zoom.style.transform = "scale(1)";
+    }
+    else {
+        zoom.style.transform = "scale(2)";
+    }
+    isZoomed = !isZoomed;
+});
